@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '/View/Scaffold/my_scaffold_all.dart';
 import '/View/Widgets/my_container.dart';
 
 class AboutPage extends StatelessWidget {
@@ -7,7 +6,7 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldAll(
+    return Scaffold(
         body: MyContainer(
       color: Colors.transparent,
       alignment: Alignment.center,

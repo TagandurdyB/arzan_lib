@@ -1,6 +1,6 @@
+import 'package:arzan/ViewModel/orientation_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 
 import 'Providers/provider_theme.dart';
 
@@ -9,8 +9,9 @@ class MyTheme {
   MyTheme(this.context);
 
   ThemeData theme() {
-    final providerTheme = Provider.of<ProviderTheme>(context);
+    final providerTheme = DistributorTheme(context);
     return ThemeData(
+      iconTheme: const IconThemeData(color: Color(0xff6A7073)),
       textTheme: const TextTheme(
         bodyMedium: TextStyle(),
       ).apply(

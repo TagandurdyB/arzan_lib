@@ -16,7 +16,9 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: DistributorTheme(context).colors.appBar,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        backgroundColor: DistributorTheme(context).colors.navigationBg,
         currentIndex: _selectIndex,
         onTap: (index) {
           setState(() {
@@ -36,8 +38,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         items: List.generate(
             Worlds().navigation.length,
             (index) => BottomNavigationBarItem(
-                activeIcon: DistributorTheme(context).icons.navigationS[index],
-                icon: DistributorTheme(context).icons.navigationU[index],
+                // activeIcon: DistributorTheme(context).icons.navigationS[index],
+                icon: DistributorTheme(context).icons.navigation[index],
                 label: DistributorTheme(context).worlds.navigation[index])));
   }
 }

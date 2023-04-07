@@ -3,11 +3,11 @@
 import 'package:flutter/material.dart';
 
 class ThemeColor {
-  Color appBar = Colors.grey[400]!;
+  Color appBar = Colors.white;
   Color appBarIcon = Colors.black;
   Color text = Colors.black;
-  Color canvas = const Color(0xffE9EAED);
-  Color navigationBg = const Color(0xffF2F2F2);
+  Color canvas = Colors.white;
+  Color navigationBg =  Colors.white;
   Color navigatActiveIcon = const Color(0xffDADADA);
   Color navigatUnactiveIcon = Colors.grey;
 }

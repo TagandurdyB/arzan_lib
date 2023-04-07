@@ -18,4 +18,6 @@ class Nums {
   static double avtor = MySize.arentir * 0.05;
   double appBar = MySize.arentir * 0.06;
   static double input = MySize.arentir * 0.04;
+  static double site = MySize.arentir * 0.07;
+  static double siteSub = MySize.arentir * 0.027;
 }

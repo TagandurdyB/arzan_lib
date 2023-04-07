@@ -16,6 +16,13 @@ class ThemeShadows {
                   blurRadius: 10,
                   spreadRadius: 0.5)
             ];
+     List<BoxShadow> text = [
+              const BoxShadow(
+                  color: Colors.black,
+                  offset: Offset(0, 3),
+                  blurRadius: 4,
+                  spreadRadius: 0.5)
+            ];         
 }
 
 class ThemeDarkShadows extends ThemeShadows {

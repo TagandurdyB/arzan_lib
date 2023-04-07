@@ -1,3 +1,5 @@
+import 'package:arzan/ViewModel/orientation_vm.dart';
+
 import '/Model/icons_model.dart';
 
 import '../../Model/constants_model.dart';
@@ -12,10 +14,11 @@ import 'package:provider/provider.dart';
 import '../../Model/texts_model.dart';
 
 class ProviderTheme extends ChangeNotifier {
-  bool _isLight = false;
+  bool _isLight = true;
   bool get isLight => _isLight;
   void tongleTheme() {
     _isLight = !_isLight;
+    MyOrientation.systemNavigationBarMode(_isLight);
     notifyListeners();
   }
 

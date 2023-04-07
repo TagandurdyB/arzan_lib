@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../ViewModel/Providers/provider_navigation.dart';
+import '../../ViewModel/Providers/provider_theme.dart';
+import '../../ViewModel/orientation_vm.dart';
 import '/View/Screens/first_screen.dart';
 import '/View/Screens/second_screen.dart';
 
@@ -9,6 +11,7 @@ class HomeScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     MyOrientation.systemNavigationBarMode(DistributorTheme(context).isLight);
     return buildScreens();
   }
 
