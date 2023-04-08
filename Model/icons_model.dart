@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import '/Model/colors_model.dart';
 import '/Model/icon_data_model.dart';
+import 'constants_model.dart';
 
 class ThemeIcon {
   final LightIconD? themeIcon;
@@ -31,15 +32,15 @@ class ThemeIcon {
   // List<Icon> get navigationS =>
   //     [homeS, exploreS, addS, subscriptionsS, libraryS];
 
-  Icon get menu => Icon(themeIcon!.menu, color: themeColor!.appBarIcon);
+  Icon get menu => Icon(themeIcon!.menu, size: Nums.navbarIconSize);
 
-  Icon get location => const Icon(Icons.location_on_outlined);
+  Icon get location =>  Icon(Icons.location_on_outlined,size: Nums.navbarIconSize);
 
-  Icon get addU => const Icon(Icons.add_box_outlined);
+  Icon get addU =>  Icon(Icons.add_box_outlined,size: Nums.navbarIconSize);
 
-  Icon get home => const Icon(Icons.home_filled);
+  Icon get home =>  Icon(Icons.home_filled,size: Nums.navbarIconSize);
 
-  Icon get user => const Icon(Icons.assignment_ind_outlined);
+  Icon get user =>  Icon(Icons.assignment_ind_outlined,size: Nums.navbarIconSize);
 
   List<Icon> get navigation =>
       [menu, location, addU, home, user];

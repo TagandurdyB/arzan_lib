@@ -9,10 +9,10 @@ class MyOrientation {
     setPortraitUp();
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.light,
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.dark,
         systemNavigationBarColor: Colors.transparent,
         systemNavigationBarIconBrightness: Brightness.light,
-        statusBarColor: Colors.transparent,
       ),
     );
   }
@@ -22,18 +22,20 @@ class MyOrientation {
         overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-        statusBarBrightness: isLight ? Brightness.light : Brightness.dark,
+        statusBarColor: 
+            isLight ?  Colors.white : Colors.black,
+        statusBarBrightness: Brightness.dark,
         systemNavigationBarColor:
             isLight ? const Color(0xffF6F6F6) : Colors.black,
         systemNavigationBarIconBrightness:
             isLight ? Brightness.dark : Brightness.light,
-        statusBarColor: Colors.transparent,
       ),
     );
   }
 
   static void setPortraitUp() async {
-    await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.top]);
+    await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.top]);
     await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   }
 

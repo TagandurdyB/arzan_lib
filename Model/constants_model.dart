@@ -20,4 +20,5 @@ class Nums {
   static double input = MySize.arentir * 0.04;
   static double site = MySize.arentir * 0.07;
   static double siteSub = MySize.arentir * 0.027;
+    static double navbarIconSize = MySize.arentir * 0.07;
 }

@@ -9,6 +9,9 @@ class SecondScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
       Center(child: ElevatedButton(onPressed: () {}, child: const Text("Send"))),
+      InkWell(
+        onTap: (){},
+        child: Container(padding: const EdgeInsets.all(16),child: const Icon(Icons.home),))
     ]);
   }
 }

@@ -10,21 +10,25 @@ class ThemeColor {
   Color navigationBg =  Colors.white;
   Color navigatActiveIcon = const Color(0xffDADADA);
   Color navigatUnactiveIcon = Colors.grey;
+  Color navigatSelectRound = const Color(0xffDBEEE1);
 }
 
 class ThemeDarkColor extends ThemeColor {
   @override
-  Color appBar = const Color.fromARGB(255, 66, 66, 66);
+  Color appBar =  Colors.grey[700]!;
   @override
   Color appBarIcon = Colors.white;
   @override
   Color text = Colors.white;
   @override
-  Color canvas = const Color.fromARGB(255, 97, 97, 97);
+  Color canvas =  Colors.black;
   @override
-  Color navigationBg = const Color.fromARGB(255, 48, 46, 46);
+  Color navigationBg =  Colors.black;
   @override
   Color navigatActiveIcon = Colors.white;
   @override
   Color navigatUnactiveIcon = Colors.grey;
+  @override
+  Color navigatSelectRound = const Color(0xff031508);
+
 }

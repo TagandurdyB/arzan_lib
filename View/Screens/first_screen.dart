@@ -8,7 +8,10 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double arentir = MySize.arentir;
-    return Container(color: Colors.red);
+    return Container(color: Colors.red,
+    child: IconButton(
+      onPressed: (){},
+      icon: const Icon(Icons.home)),);
   }
 
 

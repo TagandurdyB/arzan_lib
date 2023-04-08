@@ -1,7 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:arzan/ViewModel/Providers/provider_theme.dart';
 import 'package:flutter/material.dart';
 
+import '../../ViewModel/Providers/provider_navigation.dart';
 import '../../ViewModel/size_vm.dart';
+import '../Widgets/my_container.dart';
 
 class CustomNavigationBar extends StatelessWidget {
   CustomNavigationBar({super.key});
@@ -14,6 +18,7 @@ class CustomNavigationBar extends StatelessWidget {
       alignment: Alignment.center,
       width: double.infinity,
       height: MySize.arentir * 0.2,
+      color: DistributorTheme(context).colors.navigationBg,
       child: const NavigationItems(),
     );
   }
@@ -31,39 +36,43 @@ class _NavigationItemsState extends State<NavigationItems> {
 
   @override
   Widget build(BuildContext context) {
-
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: List.generate(
         5,
         (index) {
           final icon = DistributorTheme(context).icons.navigation[index];
-          return IconButton(
-              iconSize: MySize.arentir * 0.07,
-              onPressed: () {
-                debugPrint("Index:= $index");
-                setState(() {
-                  _slectedIndex = index;
-                });
-                if(index==0){Scaffold.of(context).openDrawer();}
-              },
-              icon: index == _slectedIndex && index > 1
-                  ? buildRound(icon)
-                  : icon);
+          final bool isSelect =
+              ProcessNavigation(context).screenIndex == index && index > 1;
+          return InkWell(
+            
+            child: MyContainer(
+              onTap: () {
+              debugPrint("Index:= $index");
+              setState(() {
+                _slectedIndex = index;
+              });
+              ProcessNavigation(context).changeIndex(index);
+              if (index == 0) Scaffold.of(context).openDrawer();
+            }, color: isSelect
+                      ? DistributorTheme(context).colors.navigatSelectRound
+                      : Colors.transparent,
+                alignment: Alignment.center,
+                width: MySize.arentir * 0.11,
+                height: MySize.arentir * 0.11,
+                shape: MySize.arentir * 0.1,
+                borderColor: Colors.transparent,
+                child: Theme(
+                    data: ThemeData(
+                        iconTheme: IconThemeData(
+                      color: isSelect
+                          ? const Color(0xff267B39)
+                          : const Color(0xff6E7F8C),
+                    )),
+                    child: icon)),
+          );
         },
       ),
-    );
-  }
-
-  Widget buildRound(Widget child) {
-    return Container(
-      alignment: Alignment.center,
-      padding: const EdgeInsets.all(3),
-      decoration: const BoxDecoration(
-        color: Color(0xffDBEEE1),
-        shape: BoxShape.circle,
-      ),
-      child: child,
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:arzan/ViewModel/orientation_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,7 +10,7 @@ class MyTheme {
   ThemeData theme() {
     final providerTheme = DistributorTheme(context);
     return ThemeData(
-      iconTheme: const IconThemeData(color: Color(0xff6A7073)),
+      iconTheme: const IconThemeData(color: Color(0xff495864)),
       textTheme: const TextTheme(
         bodyMedium: TextStyle(),
       ).apply(

@@ -11,7 +11,6 @@ class HomeScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     MyOrientation.systemNavigationBarMode(DistributorTheme(context).isLight);
     return buildScreens();
   }
 
